@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "authlib_patcher",
+    "name": "AuthLibPatcher",
+    "description": "",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["Yuugiri"],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

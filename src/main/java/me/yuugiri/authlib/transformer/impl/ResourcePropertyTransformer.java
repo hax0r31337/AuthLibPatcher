@@ -14,10 +14,6 @@ public class ResourcePropertyTransformer implements ITransformer {
         return "com.mojang.authlib.properties.Property";
     }
 
-    public boolean a() {
-        return  true;
-    }
-
     @Override
     public byte[] transform(String name, byte[] klass) {
         final ClassNode classNode = ClassUtil.readClass(klass);

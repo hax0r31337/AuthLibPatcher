@@ -8,6 +8,8 @@ import org.objectweb.asm.tree.LdcInsnNode;
 
 public class YggdrasilTransformer implements ITransformer {
 
+    public static final String MOCK_YGGDRASIL_SERVER_ADDRESS = "http://127.0.0.1:4000/";
+
     @Override
     public String targetClass() {
         return "com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService";
@@ -24,7 +26,7 @@ public class YggdrasilTransformer implements ITransformer {
                         if (abstractInsnNode instanceof LdcInsnNode) {
                             final LdcInsnNode lin = (LdcInsnNode) abstractInsnNode;
                             if (lin.cst instanceof String) {
-                                lin.cst = ((String)lin.cst).replaceAll("https://sessionserver.mojang.com/", "http://127.0.0.1:4000/");
+                                lin.cst = ((String)lin.cst).replaceAll("https://sessionserver.mojang.com/", MOCK_YGGDRASIL_SERVER_ADDRESS);
                             }
                         }
                     }

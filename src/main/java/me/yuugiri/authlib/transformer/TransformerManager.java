@@ -2,9 +2,7 @@ package me.yuugiri.authlib.transformer;
 
 import me.yuugiri.authlib.transformer.impl.ResourcePropertyTransformer;
 import me.yuugiri.authlib.transformer.impl.YggdrasilTransformer;
-import org.apache.commons.io.IOUtils;
 
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 public class TransformerManager {
@@ -25,15 +23,7 @@ public class TransformerManager {
             if (name.equals(transformer.targetClass())) {
                 klass = transformer.transform(name, klass);
                 hasModified = true;
-                System.out.println(name);
-            }
-        }
-
-        if (hasModified) {
-            try {
-                IOUtils.write(klass, new FileOutputStream(name+".class"));
-            } catch (Exception e) {
-
+                System.out.println("Transformed class: " + name);
             }
         }
 

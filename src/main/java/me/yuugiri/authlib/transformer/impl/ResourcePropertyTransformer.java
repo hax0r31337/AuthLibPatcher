@@ -27,6 +27,6 @@ public class ResourcePropertyTransformer implements ITransformer {
                     methodNode.instructions.insertBefore(node, new InsnNode(Opcodes.IRETURN));
                 });
 
-        return ClassUtil.writeClass(classNode);
+        return ClassUtil.writeClass(classNode, true);
     }
 }

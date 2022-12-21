@@ -32,6 +32,6 @@ public class YggdrasilTransformer implements ITransformer {
                     }
                 });
 
-        return ClassUtil.writeClass(classNode);
+        return ClassUtil.writeClass(classNode, false);
     }
 }

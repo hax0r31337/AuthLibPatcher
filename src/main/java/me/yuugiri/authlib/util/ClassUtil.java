@@ -13,8 +13,8 @@ public class ClassUtil {
         return classNode;
     }
 
-    public static byte[] writeClass(final ClassNode classNode) {
-        final ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_MAXS);
+    public static byte[] writeClass(final ClassNode classNode, final boolean frames) {
+        final ClassWriter classWriter = new ClassWriter(frames ? ClassWriter.COMPUTE_FRAMES : ClassWriter.COMPUTE_MAXS);
         classNode.accept(classWriter);
         return classWriter.toByteArray();
     }
